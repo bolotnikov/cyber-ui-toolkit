@@ -73,9 +73,6 @@ for (const name of ['cyber-ui', 'cyber-ui-sdk']) {
     if (name === 'cyber-ui-sdk')
       assert.equal(manifest.peerDependencies['@gamedevland/cyber-ui'], `^${release.version}`);
     assert.equal(manifest.publishConfig.access, 'public');
-    assert.equal(
-      manifest.repository.url,
-      'git+https://github.com/gamedevland/cyber-ui-toolkit.git',
-    );
+    assert.equal(manifest.repository.url, 'git+https://github.com/bolotnikov/cyber-ui-toolkit.git');
   });
 }

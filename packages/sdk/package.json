@@ -29,12 +29,12 @@
   "author": "Gamedev Land",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gamedevland/cyber-ui-toolkit.git",
+    "url": "git+https://github.com/bolotnikov/cyber-ui-toolkit.git",
     "directory": "packages/sdk"
   },
-  "homepage": "https://github.com/gamedevland/cyber-ui-toolkit#readme",
+  "homepage": "https://github.com/bolotnikov/cyber-ui-toolkit#readme",
   "bugs": {
-    "url": "https://github.com/gamedevland/cyber-ui-toolkit/issues"
+    "url": "https://github.com/bolotnikov/cyber-ui-toolkit/issues"
   },
   "keywords": [
     "pixijs",

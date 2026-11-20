@@ -55,8 +55,8 @@ Call `dispose()` before destroying borrowed views; disposal is idempotent.
 not include text or arbitrary Container snapshots. All effects leave host contexts alive.
 Core does not create renderers, tickers, DOM listeners, asset loaders, or audio players.
 
-[Full API guide and examples](https://github.com/gamedevland/cyber-ui-toolkit#readme)
-· [Source and issues](https://github.com/gamedevland/cyber-ui-toolkit)
+[Full API guide and examples](https://github.com/bolotnikov/cyber-ui-toolkit#readme)
+· [Source and issues](https://github.com/bolotnikov/cyber-ui-toolkit)
 
 MIT License. PixiJS `>=8.16.0 <9`. Node.js 22.12+ for Node usage.
 

@@ -120,8 +120,8 @@ on a parent or child so they do not compete for the wrapper's transform. Use a s
 instead when reduced motion is enabled. The action schedules SDK-owned tweens; invocation
 does not wait for their completion.
 
-[Full guide](https://github.com/gamedevland/cyber-ui-toolkit#readme)
-· [Typechecked component](https://github.com/gamedevland/cyber-ui-toolkit/blob/main/examples/sdk/src/CyberPanel.ts)
+[Full guide](https://github.com/bolotnikov/cyber-ui-toolkit#readme)
+· [Typechecked component](https://github.com/bolotnikov/cyber-ui-toolkit/blob/main/examples/sdk/src/CyberPanel.ts)
 
 MIT License. Core `^0.2.0`, SDK `0.0.11`, PixiJS `>=8.16.0 <9`.
 
