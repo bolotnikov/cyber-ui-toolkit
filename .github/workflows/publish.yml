@@ -1,25 +1,35 @@
-name: Publish npm packages
+name: Check Cyber UI npm OIDC publishing
+
 on:
   workflow_dispatch:
+
 permissions:
   contents: read
   id-token: write
+
 jobs:
-  publish:
+  stage:
+    if: github.repository == 'bolotnikov/cyber-ui-toolkit' && github.ref == 'refs/heads/codex/verify-npm-oidc'
     runs-on: ubuntu-latest
     environment: npm
+    strategy:
+      fail-fast: false
+      matrix:
+        directory: [core, sdk]
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-          registry-url: https://registry.npmjs.org
+      - run: npm install --global npm@latest
       - run: npm ci
       - run: npm run check
-      - run: npm publish --workspace @gamedevland/cyber-ui --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: npm publish --workspace @gamedevland/cyber-ui-sdk --access public --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Stage test version through npm OIDC
+        working-directory: packages/${{ matrix.directory }}
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          npm pkg set "version=${version}-oidc-test.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}" --workspaces=false
+          npm stage publish . --workspaces=false --access public --tag oidc-check
